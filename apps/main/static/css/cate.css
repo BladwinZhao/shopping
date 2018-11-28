@@ -1,0 +1,42 @@
+.container-fluid{
+    position: relative;
+}
+
+.cate{
+    top:160px;
+    position: absolute;
+    z-index: 2;
+}
+
+.cate_menu{
+    margin: 0;
+    z-index: 2;
+}
+
+
+.submenu{
+    z-index: 2;
+    width: 800px;
+    position: absolute;
+    left: 120px;
+    top: 35px;
+
+}
+.submenu2{
+    display: none;
+}
+.cate_menu>a{
+    display: block;
+    text-align: center;
+    width: 120px;
+    background: #e8e8e8;
+    padding: 3px 0;
+}
+.cate>p{
+    margin: 0;
+    text-align: center;
+    padding: 6px 0;
+    width: 120px;
+    background: orangered;
+}
+

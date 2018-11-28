@@ -1,0 +1,20 @@
+<div id="cate" class="cate">
+    <p>全部分类</p>
+    {% for cate in cate_list %}
+        <div class="cate_menu">
+            <a href="#">{{ cate.name }}</a>
+            <div class="submenu">
+                {% for sunmenu in cate.submenu %}
+                    <div class="submenu2">
+                        <p>{{ sunmenu.name }}</p>
+                        {% for submenu2 in sunmenu.submenu2 %}
+                            <a href="#">{{ submenu2.name }}</a>|
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+
+</div>
+

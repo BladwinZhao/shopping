@@ -1,0 +1,6 @@
+.nav{
+    background: orangered;
+}
+.nav >li:first-child{
+    padding-left: 150px;
+}

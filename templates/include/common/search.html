@@ -1,0 +1,11 @@
+{% load staticfiles %}
+<div class="page_search clear">
+        <img src="{% static 'img/logo.gif' %}" alt="">
+        <form class="input-group" action="{% url 'search' %}" method="get">
+            <input type="text" class="form-control" name="keyword" placeholder="Search for... ">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="submit">搜索</button>
+            </span>
+            <span></span>
+        </form><!-- /input-group -->
+    </div>
