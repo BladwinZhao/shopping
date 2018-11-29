@@ -2,6 +2,7 @@ import xadmin
 
 # 全局配置
 from xadmin import views
+from xadmin.sites import register
 
 from apps.main.models import Navigation, Shop, User, Image, Review, Banner, Category, Order, Property, PropertyValue, \
     ShopCar, SubMenu, SubMenu2
@@ -34,7 +35,7 @@ class NavigationAdmin:
 
 xadmin.site.register(Navigation,NavigationAdmin)
 
-
+@register(Shop)
 class ShopAdmin:
     list_display=['shop_id','name','sub_title','create_date','original_price','promote_price','stock','cate']
     #修改默认分页的条数
@@ -42,7 +43,6 @@ class ShopAdmin:
     #搜索字段
     search_fields =['name','sub_title']
     list_editor =[]
-xadmin.site.register(Shop,ShopAdmin)
 
 
 #自定义xadmin

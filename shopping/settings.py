@@ -43,6 +43,7 @@ CUSTOM_APPS =[
     'apps.detail',
     'apps.cate',
     'apps.search',
+    'apps.shopping_car',
 ]
 
 INSTALLED_APPS = EXT_APPS + CUSTOM_APPS +SYS_APPS
@@ -133,6 +134,8 @@ STATIC_ROOT ='static_root'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR,'static'),
     os.path.join(BASE_DIR,'apps/main/static'),
+    os.path.join(BASE_DIR, 'apps/account/static'),
+
 )
 
 #配置访问多媒体路径

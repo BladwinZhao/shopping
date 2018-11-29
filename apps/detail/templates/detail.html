@@ -3,7 +3,7 @@
 {% block page_head %}
     {% include 'include/common/top.html' %}
     {% include 'include/common/search.html' %}
-    <img src="/static/img/category/{{ shop.cate_id}}.jpg" alt="" class="cate_img">
+    <img src="/static/img/category/{{ shop.cate_id }}.jpg" alt="" class="cate_img">
 {% endblock %}
 
 {% block page_css %}
@@ -34,7 +34,7 @@
             float: left;
         }
 
-        #shop_detail_review{
+        #shop_detail_review {
             display: none;
         }
 
@@ -43,7 +43,8 @@
             display: inline-block;
             width: 30%;
         }
-        .cate_img{
+
+        .cate_img {
             margin-left: 10%;
             width: 60%;
         }
@@ -69,13 +70,13 @@
         });
         $(function () {
             $('.shop_detail_button').click(function () {
-                $('#shop_detail').css('display','block');
-                $('#shop_detail_review').css('display','none')
+                $('#shop_detail').css('display', 'block');
+                $('#shop_detail_review').css('display', 'none')
 
             });
             $('.review').click(function () {
-                $('#shop_detail').css('display','none');
-                $('#shop_detail_review').css('display','block')
+                $('#shop_detail').css('display', 'none');
+                $('#shop_detail_review').css('display', 'block')
             })
         })
     </script>
@@ -108,18 +109,18 @@
         </div>
 
         <div id="shop_detail_review">
-            {% for review in reviews %}
-                <p>
-                    {{ review.content }}
-                    {{ review.create_date|date:'Y-m-d' }}
-                    {{ review.user.user.username }}
-                </p>
+            {% if reviews %}
+                {% for review in reviews %}
+                    <p>
+                        {{ review.content }}
+                        {{ review.create_date|date:'Y-m-d' }}
+                        {{ review.user.user.username }}
+                    </p>
 
-            {% endfor %}
-
-
+                {% endfor %}
+            {% else %}
+                <p>暂无评价!!</p>
+            {% endif %}
         </div>
-
-
     </div>
 {% endblock %}

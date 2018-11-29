@@ -26,7 +26,7 @@ def detail(request):
                 shop.update(imgs=imgs)
                 values = PropertyValue.objects.filter(shop_id=shop_id)
                 reviews = Review.objects.filter(shop_id=shop_id)
-                return render(request, 'detail.html', {'shop': shop, 'values': values, 'reviews': reviews,})
+                return render(request, 'detail.html', {'shop': shop,'values': values,'reviews': reviews})
             # 一对一查询
             # 正向查询反向查询 都能查询出相关的子表数据
             #  user.userprofile.phone
