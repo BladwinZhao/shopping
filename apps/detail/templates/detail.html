@@ -78,6 +78,26 @@
                 $('#shop_detail').css('display', 'none');
                 $('#shop_detail_review').css('display', 'block')
             })
+        });
+        $(function () {
+            $('#add_cart').click(function () {
+                let $number = $('#number').val();
+                let $shop_id = $('#add_cart').attr('shop_id');
+                let data = {
+                    'number': $number,
+                    'shop_id': $shop_id,
+                };
+                $.get("{% url 'add' %}", data, function (result) {
+                    if (result && result.status===200){
+                       let car_number =parseInt($('#car_number').text());
+                       car_number =car_number + result.content;
+                       $('#car_number').text(car_number)
+                    }else if (result.status===302){
+                        window.location.href= result.content
+                    } 
+                    
+                })
+            })
         })
     </script>
 {% endblock %}

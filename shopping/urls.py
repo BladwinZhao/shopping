@@ -6,9 +6,11 @@ from apps.main import views
 from shopping import settings
 
 urlpatterns = [
-      url('xadmin/', xadmin.site.urls),
-      url('^$', views.index),
-      url('shop/', include('detail.urls')),
-      url('search/', include('search.urls')),
-      url('account/', include('account.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+                  url('xadmin/', xadmin.site.urls),
+                  url('^$', views.index),
+                  url('shop/', include('detail.urls')),
+                  url('search/', include('search.urls')),
+                  url('account/', include('account.urls')),
+                  url('cart/', include('shopping_car.urls')),
+
+              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

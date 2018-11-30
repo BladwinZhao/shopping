@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="{% url 'send' %} " method="post">
+    {% csrf_token %}
+    {% if msg %}
+        <p>{{ msg }}</p>
+    {% endif %}
+    <lable>请输入手机号，邮箱，或者用户名</lable>
+    <input type="text" name="value" placeholder="请输入">
+    <input type="submit" value="提交" >
+    <a href="{% url 'register' %}">前往注册</a>
+</form>
+</body>
+</html>

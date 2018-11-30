@@ -33,6 +33,7 @@ EXT_APPS = [
     'crispy_forms',
     #非必要 修改样式
     'reversion',
+    'django_ajax',
 ]
 
 
@@ -207,7 +208,8 @@ EMAIL_USE_TLS = True
 
 # ===============发送邮箱配置 end ==========
 
-
+#添加全局的登录地址 配合@login_required使用
+LOGIN_URL='/account/login/'
 
 #日志配置
 LOGGING ={

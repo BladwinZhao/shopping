@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h1>亲爱的{{ user.username }}你好！</h1>
+    <p>请点击下面链接前往激活用户</p>
+    <a href="{{ active_url }}">点此激活用户</a>
+    <p>如果激活失败，请复制下面连接去浏览器激活！</p>
+    <p>{{ active_url }}</p>
+</div>
+</body>
+</html>
