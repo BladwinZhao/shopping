@@ -13,9 +13,8 @@ from django.contrib.auth.decorators import login_required
 # 登录
 # 注销
 # 修改密码 登录修改  通过邮件修改密码
-from apps.main.models import User
+from apps.main.models import User, ShopCar
 from shopping import settings
-
 
 def login_view(request):
     if request.method == 'GET':

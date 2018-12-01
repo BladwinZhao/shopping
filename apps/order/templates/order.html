@@ -1,0 +1,67 @@
+{% extends 'base/base.html' %}
+{% load staticfiles %}
+{% load filter_tags %}
+{% block page_css %}
+    <link rel="stylesheet" href="{% static 'css/top.css' %}">
+{% endblock %}
+
+{% block page_head %}
+    `{% include 'include/common/top.html' %}
+     <div class="top_logo">
+         <img src=""{% static 'img/logo.gif' %} alt="">
+         <img src="{% static 'img/site/buyflow.png' %}" alt="">
+     </div>
+{% endblock %}
+
+{% block page_main %}
+    <form action="">
+        <h3>输入收货地址</h3>
+        <label>详细地址
+            <input type="text" name="address" placeholder="建议您如实填写详细收货地址，例如接到名称，门牌好吗，楼层和房间号等信息">
+        </label>
+        <label for="">
+            邮政编码
+            <input type="text" name="postal_code" placeholder="邮编">
+        </label>
+        <label for="">
+            收货人姓名
+            <input type="text" name="username">
+        </label>
+        <label for="">
+            收货人手机号
+            <input type="text" name="phone" placeholder="11位手机号">
+
+        </label>
+        <h3>
+           确认订单信息
+        </h3>
+        <table class="table">
+            <tr>
+                <th>商品信息</th>
+                <th>单价</th>
+                <th>数量</th>
+                <th>金额</th>
+            </tr>
+            {% for car in car_list %}
+                <tr>
+                    <td>
+                        <img src="/static/img/small/{{ car.img }}.jpg" alt="">
+                        <span>{{ car.shop.name }}</span>
+                    </td>
+                    <td>
+                        ${{ car.shop.promote_price }}
+                    </td>
+                    <td>
+                        {{ car.number }}
+                    </td>
+                    <td>
+                       {{ car.shop.promote_price|test1:car.number }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+        <label for="">给卖家留言
+            <input type="text" name="message">
+        </label>
+    </form>
+{% endblock %}

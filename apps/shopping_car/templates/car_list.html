@@ -1,0 +1,58 @@
+{% extends 'base/base.html' %}
+{% load staticfiles %}
+{% load filter_tags %}
+{% block page_css %}
+    <link rel="stylesheet" href="{% static 'css/top.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/search.css' %}" type="text/css">
+{% endblock %}
+
+
+{% block page_head %}
+    {% include 'include/common/top.html' %}
+    {% include 'include/common/search.html' %}
+{% endblock %}
+
+{% block page_jq %}
+    <script type="text/javascript">
+
+    </script>
+{% endblock %}
+
+
+{% block page_main %}
+    <table class="table">
+        <tr>
+            <th><input type="checkbox">全选</th>
+            <th>商品信息</th>
+            <th>单价</th>
+            <th>数量</th>
+            <th>金额</th>
+            <th>操作</th>
+        </tr>
+        {% for car in car_list %}
+            <tr>
+                <td class="list_chk"><input type="checkbox"></td>
+                <td class="list_con">
+                    <img src="/static/img/small/{{ car.img }}.jpg" alt="">
+                    <a href="{% url 'detail' %}?sid={{ car.shop_id }}">{{ car.shop.name }}</a>
+                </td>
+                <td class="list_price">
+                    ￥{{ car.shop.original_price }}
+                    ￥{{ car.shop.promote_price }}
+                </td>
+                <td class="list_number">
+                    {{ car.number }}
+                </td>
+                <td class="list_sum">
+                    ￥{{ car.number|test1:car.shop.promote_price }}
+                </td>
+                <td class="list_dome">
+                    <a href="{% url 'del' car.shop_id %}">
+                        删除
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <p>已被选中</p>
+{% endblock %}

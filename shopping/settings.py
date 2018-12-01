@@ -45,6 +45,7 @@ CUSTOM_APPS =[
     'apps.cate',
     'apps.search',
     'apps.shopping_car',
+    'apps.order',
 ]
 
 INSTALLED_APPS = EXT_APPS + CUSTOM_APPS +SYS_APPS
@@ -136,6 +137,7 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR,'static'),
     os.path.join(BASE_DIR,'apps/main/static'),
     os.path.join(BASE_DIR, 'apps/account/static'),
+    os.path.join(BASE_DIR, 'apps/shopping_car/static'),
 
 )
 

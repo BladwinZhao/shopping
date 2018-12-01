@@ -14,7 +14,7 @@
     {% endif %}
 
     <a href="#">我的订单</a>
-    <a href="#">
+    <a href="{% url 'cars' %}">
         <span class="glyphicon glyphicon-shopping-cart">购物车</span>
         {% if user.is_authenticated %}
             <span id="car_number">0</span>件
