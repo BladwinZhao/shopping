@@ -56,8 +56,8 @@ def product_order(request):
 
 @login_required
 def order(request):
-    if request.method == 'POST':
-        oid = request.POST.get('oid')
+    if request.method == 'GET':
+        oid = request.GET.get('oid')
         car_list = ShopCar.objects.filter(order_id=oid)
         all_price=0
         if car_list:

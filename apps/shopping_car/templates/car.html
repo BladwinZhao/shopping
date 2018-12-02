@@ -37,7 +37,7 @@
                     };
                     $.post('{% url 'confirm' %}', data, function (result) {
                         if (result.status === 200) {
-                            window.location.href = '/cart/order/?oid=' + result.content.oid
+                            window.location.href = '/order/order/?oid=' + result.content.oid
                         }
                     })
                 }
